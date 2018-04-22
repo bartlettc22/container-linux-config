@@ -1,9 +1,27 @@
-# This config is meant to be consumed by the config transpiler, which will
-# generate the corresponding Ignition config. Do not pass this config directly
-# to instances of Container Linux.
-
-passwd:
-  users:
-    - name: core
-      ssh_authorized_keys:
-        - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD/vVIvqoD2dLblrMn06ehhVowo6gUCVFzlZOZxlJeIjyjsn8YeRdwx9bl0e5tYnLfsfNSHx4sby3JtHYDKSM1FIcRFzkqjoZ70WpeZ2kFlf6LJ3jbHBgd77Ei420ORa8Ns6kKen+J4EbdHD5ch2sTWnTCxLBSKxcz8PnE5nC+BCCdIcdaBJAZ9Djee6oSeuIJciDn5I0FSBo7WwKhh7iGRuEv3WB12gxWHli6Vj7DHYoHGJKgEqJrI8KUB7cuW01pu9twdV7B/Vd6LqFagzhiaFqjlLlTiGZ/4ulSQYRzBa/itzjaVjFr2fawyfzC922FR5pXeqNljAIi+1CqXWMnH
+{
+  "ignition": {
+    "config": {},
+    "timeouts": {},
+    "version": "2.1.0"
+  },
+  "networkd": {},
+  "passwd": {
+    "users": [
+      {
+        "name": "core",
+        "sshAuthorizedKeys": [
+          "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD/vVIvqoD2dLblrMn06ehhVowo6gUCVFzlZOZxlJeIjyjsn8YeRdwx9bl0e5tYnLfsfNSHx4sby3JtHYDKSM1FIcRFzkqjoZ70WpeZ2kFlf6LJ3jbHBgd77Ei420ORa8Ns6kKen+J4EbdHD5ch2sTWnTCxLBSKxcz8PnE5nC+BCCdIcdaBJAZ9Djee6oSeuIJciDn5I0FSBo7WwKhh7iGRuEv3WB12gxWHli6Vj7DHYoHGJKgEqJrI8KUB7cuW01pu9twdV7B/Vd6LqFagzhiaFqjlLlTiGZ/4ulSQYRzBa/itzjaVjFr2fawyfzC922FR5pXeqNljAIi+1CqXWMnH"
+        ]
+      }
+    ]
+  },
+  "storage": {
+    "files": [{
+        "filesystem": "root",
+        "path": "/etc/hostname",
+        "mode": 420,
+        "contents": { "source": "data:,core1" }
+      }]
+  },
+  "systemd": {}
+}
